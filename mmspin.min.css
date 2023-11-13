@@ -4,12 +4,9 @@
     overflow: hidden;
 }
 body {
-    font-family: Roboto, sans-serif;
+    font-family: sans-serif !important;
 }
-#mmspin_form,
-input,textarea {
-    font-family: Raleway;
-}
+
 :root {
     --wheel-font: 'Lato', 'Quicksand', sans-serif;
     --wheel-size: 400px;
@@ -94,7 +91,7 @@ input,textarea {
 }
 .spin {
     position: absolute;
-    top: 45%;
+    top: 49%;
     right: 45%;
     transform: translateY(-35%) rotate(90deg);
     z-index: 10;
@@ -224,11 +221,11 @@ input,textarea {
 img#pro-item-img {
     max-width: 300px !important;
 }
-#main {
+#mmspin-main {
     width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 20px 0 40px;
 }
 #mmspin_form {
@@ -256,6 +253,7 @@ img#pro-item-img {
 }
 .mmspin_tc_list_item {
     padding-bottom: 20px;
+    line-height: 50px;
 }
 .mmspin_button_container {
     display: flex;
@@ -322,14 +320,17 @@ img#pro-item-img {
     width: 30%;
     margin: auto auto 30px;
 }
-input,textarea {
+.mmspin_mobile_input,
+.mmspin_fullname_input,
+.mmspin_code_input,
+.mmspin_address_input {
     display: block;
-    padding: 20px 10px;
-    width: 100%;
-    margin: 10px auto;
-    font-size: 17px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
+    padding: 20px 10px !important;
+    width: 100% !important;
+    margin: 10px auto !important;
+    font-size: 17px !important;
+    border: 1px solid #aaa !important;
+    border-radius: 10px !important;
 }
 .mmspin_banner_image {
     width: 100%;
@@ -369,6 +370,7 @@ input,textarea {
 .mmspin_campaign_description {
     font-size: 25px;
     white-space: pre-line !important;
+    line-height: 55px;
 }
 .mmspin_touch_message {
     margin-top: 20px;
@@ -465,7 +467,7 @@ input,textarea {
     }
     .mmspin_button_container,
     .mmspin_input_container {
-        width: 50%;
+        width: 60%;
     }
 }
 @media (max-width: 428px) {
@@ -477,7 +479,7 @@ input,textarea {
         position: absolute;
         width: 140px;
         height: 60px;
-        top: 58%;
+        top: 61%;
         right: 37%;
         font-size: 15px;
     }
@@ -507,7 +509,7 @@ input,textarea {
         position: absolute;
         width: 137px;
         height: 63px;
-        top: 58%;
+        top: 62%;
         right: 37%;
         font-size: 15px;
     }
@@ -538,7 +540,7 @@ input,textarea {
         position: absolute;
         width: 137px;
         height: 63px;
-        top: 58%;
+        top: 65%;
         right: 37%;
         font-size: 15px;
     }

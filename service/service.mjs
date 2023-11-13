@@ -356,10 +356,27 @@ function createGoogleRecaptcha() {
         });
     } catch (error) {}
 }
+
+function createImage(desktop, mobile) {
+    let mmspinBannerImage = document.createElement('img');
+    let mmspinMobileBannerImage = document.createElement('img');
+    $(mmspinBannerImage).addClass('mmspin_banner_image');
+    $(mmspinMobileBannerImage).addClass('mmspin_mobile_banner_image');
+    const imageSrc = basePath + desktop;
+    const imageMobileSrc = basePath + mobile;
+    $(mmspinBannerImage).attr('src', imageSrc);
+    $(mmspinMobileBannerImage).attr('src', imageMobileSrc);
+    $('#mmspin-main').append(
+        mmspinBannerImage,
+        mmspinMobileBannerImage
+    );
+}
+
 export {
     clearInput,
     checkPhoneNumber,
     sendUserData,
     spin,
     createGoogleRecaptcha,
+    createImage,
 };

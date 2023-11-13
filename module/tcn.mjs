@@ -47,5 +47,5 @@ export function createTCForm() {
     );
 
     $(mmspinForm).append(mmspinTabTcContainer);
-    $('#main').append(mmspinForm);
+    $('#mmspin-main').append(mmspinForm);
 }

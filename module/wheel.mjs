@@ -32,7 +32,10 @@ export function createWheel() {
     // cirecel arrow image
     let circelArrowImage = document.createElement('img');
     $(circelArrowImage).addClass('circle-arrow');
-    $(circelArrowImage).attr('src', '../arrow2.png');
+    $(circelArrowImage).attr(
+        'src',
+        'https://plugin.mickhae.com/arrow.png'
+    );
     $(circleContainer).append(circelArrowImage);
 
     // spin button

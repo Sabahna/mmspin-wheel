@@ -1,5 +1,7 @@
-export let campaignAPIKey = $('#main').attr('data-campaign-api-id');
-export let dataAPIKey = $('#main').attr('data-api-key');
+export let campaignAPIKey = $('#mmspin-main').attr(
+    'data-campaign-api-id'
+);
+export let dataAPIKey = $('#mmspin-main').attr('data-api-key');
 export let termsAndConditions = [];
 export let promotions = [];
 export let campaign = null;

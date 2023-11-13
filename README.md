@@ -28,7 +28,7 @@ Add the following lines to the `<body>` section of your HTML document:
 
 ```html
 <div
-    id="main"
+    id="mmspin-main"
     data-api-key="YOUR_CLIENT_API_KEY"
     data-campaign-api-id="YOUR_CAMPAIGN_API_ID"
 ></div>
@@ -51,7 +51,7 @@ Add the following lines to the `<body>` section of your HTML document:
     </head>
     <body>
         <div
-            id="main"
+            id="mmspin-main"
             data-api-key="YOUR_CLIENT_API_KEY"
             data-campaign-api-id="YOUR_CAMPAIGN_API_ID"
         ></div>
