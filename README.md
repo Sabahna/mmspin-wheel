@@ -1,7 +1,5 @@
 # MMSPIN Wheel For your website
 
-# Plugin Name Documentation
-
 ## Step 1: Obtain API Keys
 
 
