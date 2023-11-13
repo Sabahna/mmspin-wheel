@@ -222,8 +222,7 @@ img#pro-item-img {
     max-width: 300px !important;
 }
 #mmspin-main {
-    width: 90%;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px 0 40px;
