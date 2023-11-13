@@ -91,7 +91,7 @@ body {
 }
 .spin {
     position: absolute;
-    top: 49%;
+    top: 46%;
     right: 45%;
     transform: translateY(-35%) rotate(90deg);
     z-index: 10;
@@ -100,6 +100,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
+    margin: 15px 0px !important;
 }
 .wheel-item {
     top: 50%;
@@ -370,6 +371,7 @@ img#pro-item-img {
     font-size: 25px;
     white-space: pre-line !important;
     line-height: 55px;
+    text-align: center;
 }
 .mmspin_touch_message {
     margin-top: 20px;
@@ -476,11 +478,9 @@ img#pro-item-img {
     }
     .spin {
         position: absolute;
-        width: 140px;
-        height: 60px;
-        top: 61%;
-        right: 37%;
-        font-size: 15px;
+        top: 59%;
+        right: 36%;
+        font-size: 14px;
     }
     .title {
         padding: 0 5px;
@@ -506,11 +506,9 @@ img#pro-item-img {
     }
     .spin {
         position: absolute;
-        width: 137px;
-        height: 63px;
-        top: 62%;
-        right: 37%;
-        font-size: 15px;
+        top: 59%;
+        right: 35.5%;
+        font-size: 14px;
     }
     img#pro-item-img {
         max-width: 200px !important;
@@ -537,10 +535,8 @@ img#pro-item-img {
     }
     .spin {
         position: absolute;
-        width: 137px;
-        height: 63px;
-        top: 65%;
-        right: 37%;
+        top: 57.5%;
+        right: 36.9%;
         font-size: 15px;
     }
     .pro-image {
@@ -561,11 +557,9 @@ img#pro-item-img {
     }
     .spin {
         position: absolute;
-        width: 147px;
-        height: 68px;
         top: 61%;
-        right: 36%;
-        font-size: 13px;
+        right: 34.8%;
+        font-size: 12px;
     }
 }
 @media (max-width: 320px) {
@@ -594,11 +588,9 @@ img#pro-item-img {
     }
     .spin {
         position: absolute;
-        width: 136px;
-        height: 60px;
-        top: 61%;
-        right: 34%;
-        font-size: 13px;
+        top: 63%;
+        right: 32%;
+        font-size: 12px;
     }
     .pro-image {
         margin-left: 45px;
