@@ -12,13 +12,13 @@ You will need the following API keys:
 
 Add the following lines to the `<head>` section of your HTML document:
 
-```sh
+```html
 <link rel="stylesheet" href="https://plugin.mickhae.com/mmspin.min.css" />
 ```
 
 Add the following lines to the `<body>` section of your HTML document:
 
-```sh 
+```html 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="module" src="https://plugin.mickhae.com/mmspin.min.js"></script>
 ```
@@ -26,7 +26,7 @@ Add the following lines to the `<body>` section of your HTML document:
 
 ## Step 2: Integrate the Plugin
 
-```sh
+```html
 <div
     id="main"
     data-api-key="YOUR_CLIENT_API_KEY"
@@ -36,7 +36,7 @@ Add the following lines to the `<body>` section of your HTML document:
 
 # Spin Page HTML Example
 
-```sh
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
