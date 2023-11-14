@@ -58,8 +58,8 @@ export function createUserForm() {
 
     $(mmspinUserFormContainer).append(
         mmspinInputContainer,
-        mmspinButtonContainer,
         mmspinRecaptchaContainer,
+        mmspinButtonContainer,
         mmspinResendContainer
     );
 
