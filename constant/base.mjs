@@ -10,6 +10,10 @@ export let disagreeUrl = '';
 export let callBackUrl = '';
 export let basePath = 'https://mmspin.com/';
 export let initUserForm = true;
+export let cities = [];
+export let townships = [];
+export let cityId = null;
+export let townshipId = null;
 
 export function setTnc(tnc) {
     termsAndConditions = tnc;
@@ -37,4 +41,20 @@ export function setCallBackUrl(callUrl) {
 
 export function setUserFormInit(value) {
     initUserForm = value;
+}
+
+export function setCities(citiesData) {
+    cities = citiesData;
+}
+
+export function setTownship(townshipData) {
+    townships = townshipData;
+}
+
+export function setCityId(cId) {
+    cityId = cId;
+}
+
+export function setTownshipId(tId) {
+    townshipId = tId;
 }

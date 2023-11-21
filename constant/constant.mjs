@@ -51,6 +51,12 @@ $(mmspinCodeInput).attr({
     type: 'text',
 });
 
+const mmspinCitySelectContainer = document.createElement('div');
+$(mmspinCitySelectContainer).addClass('mmspin_city_select');
+
+const mmspinTownshipSelectContainer = document.createElement('div');
+$(mmspinTownshipSelectContainer).addClass('mmspin_township_select');
+
 const mmspinRecaptchaInput = document.createElement('input');
 $(mmspinRecaptchaInput).addClass('mmspin_recaptcha_input');
 $(mmspinRecaptchaInput).attr({type: 'hidden'});
@@ -132,6 +138,10 @@ $(homeButton).addClass('mmspin_callback_btn');
 $(homeButton).text('Home');
 $(homeButton).attr('type', 'button');
 
+// township select
+const townshipSelect = document.createElement('select');
+// city select
+const citySelect = document.createElement('select');
 export {
     mmspinTabTcContainer,
     mmspinUserFormContainer,
@@ -164,4 +174,8 @@ export {
     mmspinRecaptchaContainer,
     mmspinRecaptchaInput,
     mmspinAddressInput,
+    mmspinCitySelectContainer,
+    mmspinTownshipSelectContainer,
+    townshipSelect,
+    citySelect,
 };

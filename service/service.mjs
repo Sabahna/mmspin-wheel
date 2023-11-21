@@ -3,14 +3,23 @@ import {
     callBackUrl,
     campaign,
     campaignAPIKey,
+    cities,
+    cityId,
     couponData,
     dataAPIKey,
     promotions,
+    setCityId,
+    setTownship,
+    setTownshipId,
+    townshipId,
+    townships,
 } from '../constant/base.mjs';
 import {
     campaignInfoContainer,
+    citySelect,
     homeButton,
     mmspinAddressInput,
+    mmspinCitySelectContainer,
     mmspinCodeInput,
     mmspinCouponCodeSubtitle,
     mmspinCouponCodeTitle,
@@ -19,12 +28,14 @@ import {
     mmspinResendBtn,
     mmspinResendContainer,
     mmspinTouchMessage,
+    mmspinTownshipSelectContainer,
     mmspinWinningContainer,
     mmspinWinningCouponContainer,
     mmspinWinningItemContainer,
     mmspinWinningItemImg,
     mmspinWinningItemSubtitle,
     mmspinWinningItemTitle,
+    townshipSelect,
     wheelContainer,
 } from '../constant/constant.mjs';
 
@@ -32,6 +43,10 @@ function clearInput() {
     $(mmspinMobileInput).val('');
     $(mmspinFullnameInput).val('');
     $(mmspinCodeInput).val('');
+    $(citySelect).val('');
+    $(townshipSelect).val('');
+    $(townshipSelect).empty();
+    setTownship([]);
 }
 
 function checkPhoneNumber(mobileValue, captchaToken) {
@@ -56,6 +71,12 @@ function checkPhoneNumber(mobileValue, captchaToken) {
                     });
                     $(mmspinCodeInput).css({display: 'block'});
                     $(mmspinAddressInput).css({display: 'block'});
+                    $(mmspinCitySelectContainer).css({
+                        display: 'block',
+                    });
+                    $(mmspinTownshipSelectContainer).css({
+                        display: 'block',
+                    });
 
                     if (response.message) {
                         $(mmspinMobileInput).val(mobileValue);
@@ -69,6 +90,50 @@ function checkPhoneNumber(mobileValue, captchaToken) {
 
                         $(mmspinMobileInput).attr('disabled', !0);
                         $(mmspinCodeInput).attr('disabled', !0);
+
+                        if (response.city_id) {
+                            setCityId(response.city_id);
+                            $(citySelect).val(response.city_id);
+                            $(citySelect).attr('disabled', !0);
+                            $.ajax({
+                                url: `https://mmspin.com/api/townships?city_id=${response.city_id}`,
+                                type: 'GET',
+                                dataType: 'json',
+                                success: function (result) {
+                                    setTownship(result.townships);
+                                    // append cities
+                                    result.townships.forEach(
+                                        (item) => {
+                                            const option =
+                                                document.createElement(
+                                                    'option'
+                                                );
+                                            option.innerText =
+                                                item.name;
+                                            option.value = item.id;
+                                            townshipSelect.append(
+                                                option
+                                            );
+                                        }
+                                    );
+
+                                    setTownshipId(
+                                        response.township_id
+                                    );
+                                    $(townshipSelect).val(
+                                        response.township_id
+                                    );
+                                    $(townshipSelect).attr(
+                                        'disabled',
+                                        !0
+                                    );
+                                },
+                                error: function (error) {
+                                    console.log(error);
+                                },
+                            });
+                        }
+
                         if (response.name) {
                             $(mmspinFullnameInput).attr(
                                 'disabled',
@@ -143,6 +208,10 @@ function sendUserData() {
             $(mmspinCodeInput).css({border: '1px solid red'});
         } else if (mmspinAddressInput === '') {
             $(mmspinAddressInput).css({border: '1px solid red'});
+        } else if (cityId === null || cityId === '0') {
+            $(citySelect).css({border: '1px solid red'});
+        } else if (townshipId === null || townshipId === '0') {
+            $(townshipSelect).css({border: '1px solid red'});
         } else {
             let data = {
                 phone: phone,
@@ -151,6 +220,14 @@ function sendUserData() {
                 address: address,
                 cid: campaignAPIKey,
                 client_api_key: dataAPIKey,
+                city_id: parseInt(cityId),
+                city_name: cities.find(
+                    (item) => item.id === parseInt(cityId)
+                ).name,
+                township_id: parseInt(townshipId),
+                township_name: townships.find(
+                    (item) => item.id === parseInt(townshipId)
+                ).name,
             };
 
             storeUserInfo(data)
