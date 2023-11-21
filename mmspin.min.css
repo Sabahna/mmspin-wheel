@@ -334,10 +334,12 @@ img#pro-item-img {
 }
 .mmspin_banner_image {
     width: 100%;
+    margin-bottom: 20px;
 }
 .mmspin_mobile_banner_image {
     width: 100%;
     display: none;
+    margin-bottom: 20px;
 }
 .mmspin_campaign_info_container,
 .mmspin_spin_container {

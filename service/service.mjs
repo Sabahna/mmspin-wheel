@@ -8,6 +8,7 @@ import {
     couponData,
     dataAPIKey,
     promotions,
+    setCities,
     setCityId,
     setTownship,
     setTownshipId,
@@ -56,6 +57,19 @@ function checkPhoneNumber(mobileValue, captchaToken) {
         client_api_key: dataAPIKey,
         captcha_token: captchaToken,
     };
+
+    // cities api
+    $.ajax({
+        url: 'https://mmspin.com/api/cities',
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+            setCities(response.cities);
+        },
+        error: function (error) {
+            console.log(error);
+        },
+    });
 
     return new Promise(function (resolve, reject) {
         $.ajax({
